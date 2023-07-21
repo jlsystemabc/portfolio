@@ -1,0 +1,58 @@
+<!-- CARROSSEL -->
+		<div class="container-fluid">
+			<div class="carousel slide" data-ride="carousel" id="meuCarousel-02">
+
+			<!-- Indicadores (os pontinhos no fundo de cada imagem de slide) -->
+			<ol class="carousel-indicators">
+				<li data-target="#meuCarousel-02" data-slide-to="0" class="active"></li>
+				<li data-target="#meuCarousel-02" data-slide-to="1"></li>
+				<li data-target="#meuCarousel-02" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Passando os slides -->
+			<div class="carousel-inner">
+
+				<!-- Item 1 ativo -->
+				<div class="item active">
+					<img src="assets/images/carousel-image-1.png" alt="imagem Design Responsivo com Bootstrap" style="width: 100%;">
+					<div class="carousel-caption">
+						<h3>Design Responsivo CSS com Bootstrap e Tailwind</h3>
+						<p>Com os frameworks mobile-first mais usados e famosos do mundo podemos transformar ideias e soluções que se ajustam a qualquer tamanho de dispositivo.</p>
+					</div>
+				</div>
+
+				<!-- Item 2 -->
+				<div class="item">
+					<img src="assets/images/carousel-image-2.png" alt="Imagem Arte 2D e 3D Mobile Games" style="width: 100%">
+					<div class="carousel-caption">
+						<h3>Web Developer e Game Developer</h3>
+						<p>Atuo há mais de 9 anos com desenvolvimento de aplicações Web e Jogos Digitais.</p>
+					</div>
+				</div>
+
+				<!-- Item 3 -->
+				<div class="item">
+					<img src="assets/images/carousel-image-3.png" alt="Imagem Combinação Perfeita" style="width: 100%">
+					<div class="carousel-caption">
+						<h3>Combinação Perfeita</h3>
+						<p>Amo o desenvolvimento web, sua criação, design e programação, seus respectivos elementos e linguagens. Bem como a integração com sistemas e suas ferramentas.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Controle esquerda e direita -->
+			<a class="left carousel-control" href="#meuCarousel-02" data-slide="prev"><span class="glyphiconglyphicon-chevron-left"></span><span class="sr-only">Anterior</span></a>
+			<a class="right carousel-control" href="#meuCarousel-02" data-slide="next"><span class="glyphiconglyphicon-chevron-right"></span><span class="sr-only">Próximo</span></a>
+		</div>
+		</div>
+
+    <!-- MOSTRUÁRIO -->
+		<script>
+		 	$(document).ready(function() {
+		 		$(".btn-pref .btn").click(function () {
+		 			$(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+		 			// $(".tab").addClass("active"); // instead of this do the below 
+		 			$(this).removeClass("btn-default").addClass("btn-primary");   
+		 		});
+		 	}); 
+		</script>

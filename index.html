@@ -1,1047 +1,1049 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<title>JL Portfolio</title>
-		<meta charset="utf-8">
-		<link rel="icon" href="assets/favicon/jl-favicon.png" type="image/png">
-		<meta name="author" content="José Luiz Santos">
-		<meta name="keywords" content="html, css, bootstrap, tema, portfolio">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 
-		<!-- Links de Fontes -->
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong:300,400,400i,500,600,700" />
+  <title>J-Luiz - portfolio</title>
 
-		<link href="css/resCarousel.css" rel="stylesheet" type="text/css">
-		<link href="lib/animate-css/animate.min.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-		<style>
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 
-			/* Carrossel Projetos */
-			.po {
-				padding: 0;
-			}
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
+    rel="stylesheet">
+</head>
 
-			.resCarousel-inner .item {
-        text-align: center;
-      }
+<body id="top" class="dark_theme">
 
-      .resCarousel-inner .item .tile div, .banner .item div {
-	      display: table;
-	      width: 100%;
-	      min-height: 250px;
-	      text-align: center;
-      }
+  <!-- 
+    - #HEADER
+  -->
 
-      .resCarousel-inner .item h1 {
-	      display: table-cell;
-	      vertical-align: middle;
-	      color: white;
-      }
+  <header class="header" data-header>
+    <div class="container">
 
-      .banner .item div {
-	      background: url('demoImg.jpg') center top no-repeat;
-	      background-size: cover;
-	      min-height: 550px;
-      }
+      <h1 class="h1 logo">
+        <a href="#">J-Luiz<span>.</span></a>
+      </h1>
 
-      .item .tile div {
-	      background: url('demoImg.jpg') center center no-repeat;
-	      background-size: cover;
-	      height: 200px;
-	      color: white;
-      }
+      <div class="navbar-actions">
 
-      .item div h1 {
-        background: rgba(0, 0, 0, .4);
-      }
+        <select name="language" id="lang">
+          <option value="br">Br</option>
+          <option value="en">En</option>
+        </select>
 
-      /* NavBar */
-      .navbar {
-		    font-family: Montserrat, sans-serif;
-		    margin-bottom: 0;
-		    background-color: #2d2d30;
-		    border: 0;
-		    font-size: 11px !important;
-		    letter-spacing: 4px;
-		    opacity: 0.9;
-     	}
+        <button class="theme-btn" aria-label="Change Theme" title="Change Theme" data-theme-btn>
+          <span class="icon"></span>
+        </button>
 
-     	.navbar li a, .navbar .navbar-brand { 
-        color: #d5d5d5 !important;
-    	}
-
-    	.navbar-nav li a:hover {
-        color: #fff !important;
-     	}
-
-     	.navbar-nav li.active a {
-        color: #fff !important;
-        background-color: #29292c !important;
-     	}
-
-     	.navbar-default .navbar-toggle {
-        border-color: transparent;
-     	}
-
-     	/* Foto Arredondada */
-     	.person {
-       	border: 10px solid transparent;
-       	margin-bottom: 25px;
-       	opacity: 0.7;
-      }
-
-      .person:hover {
-       	border-color: rgba(102, 204, 255,  0.2);
-      }
-
-      /* Painel de Abas */
-      .card {
-			  margin-top: 20px;
-			  padding: 30px;
-			  background-color: rgba(214, 224, 226, 0.2);
-			  -webkit-border-top-left-radius: 5px;
-			  -moz-border-top-left-radius: 5px;
-			  border-top-left-radius: 5px;
-			  -webkit-border-top-right-radius: 5px;
-			  -moz-border-top-right-radius: 5px;
-			  border-top-right-radius: 5px;
-			  -webkit-box-sizing: border-box;
-			  -moz-box-sizing: border-box;
-			  box-sizing: border-box;
-			}
-
-			.card.hovercard {
-			  position: relative;
-			  padding-top: 0;
-			  overflow: hidden;
-			  text-align: center;
-			  background-color: #fff;
-			  background-color: rgba(255, 255, 255, 1);
-			}
-
-			.card.hovercard .card-background {
-    		height: 130px;
-			}
-
-			.card-background img {
-			  -webkit-filter: blur(25px);
-			  -moz-filter: blur(25px);
-			  -o-filter: blur(25px);
-			  -ms-filter: blur(25px);
-			  filter: blur(25px);
-			  margin-left: -100px;
-			  margin-top: -200px;
-			  min-width: 130%;
-			}
-
-			.card.hovercard .useravatar {
-			  position: absolute;
-			  top: 15px;
-			  left: 0;
-			  right: 0;
-			}
-
-			.card.hovercard .useravatar img {
-			  width: 100px;
-			  height: 100px;
-			  max-width: 100px;
-			  max-height: 100px;
-			  -webkit-border-radius: 50%;
-			  -moz-border-radius: 50%;
-			  border-radius: 50%;
-			  border: 5px solid rgba(255, 255, 255, 0.5);
-			}
-
-			.card.hovercard .card-info {
-			  position: absolute;
-			  bottom: 14px;
-			  left: 0;
-			  right: 0;
-			}
-
-			.card.hovercard .card-info .card-title {
-			  padding:0 5px;
-			  font-size: 20px;
-			  line-height: 1;
-			  color: #262626;
-			  background-color: rgba(255, 255, 255, 0.1);
-			  -webkit-border-radius: 4px;
-			  -moz-border-radius: 4px;
-			  border-radius: 4px;
-			}
-
-			.card.hovercard .card-info {
-			  overflow: hidden;
-			  font-size: 12px;
-			  line-height: 20px;
-			  color: #737373;
-			  text-overflow: ellipsis;
-			}
-
-			.card.hovercard .bottom {
-			  padding: 0 20px;
-			  margin-bottom: 17px;
-			}
-
-			.btn-pref .btn {
-    		-webkit-border-radius:0 !important;
-			}
-
-			/* Níveis de Habilidade */
-			.navbar-why-you-so-small > .navbar-collapse {
-  			background-color: rgba(51, 51, 51, 0.8);
-			}
-
-			.progress-bar {
-				text-align: left;
-				white-space: nowrap;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				cursor: pointer;
-			}
-
-			.progress-bar > .progress-type {
-  			padding-left: 10px;
-			}
-
-			.progress-meter {
-  			min-height: 15px;
-  			border-bottom: 2px solid rgb(160, 160, 160);
-			}
-
-			.progress-meter > .meter {
-  			position: relative;
-  			float: left;
-  			min-height: 15px;
-  			border-width: 0px;
-  			border-style: solid;
-  			border-color: rgb(160, 160, 160);
-			}
-
-			.progress-meter > .meter-left {
-  			border-left-width: 2px;
-			}
-
-			.progress-meter > .meter-right {
-  			float: right;
-  			border-right-width: 2px;
-			}
-
-			.progress-meter > .meter-right:last-child {
-  			border-left-width: 2px;
-			}
-
-			.progress-meter > .meter > .meter-text {
-  			position: absolute;
-  			display: inline-block;
-  			bottom: -20px;
-  			width: 100%;
-  			font-weight: 700;
-  			font-size: 0.85em;
-  			color: rgb(160, 160, 160);
-  			text-align: left;
-			}
-
-			.progress-meter > .meter.meter-right > .meter-text {
-  			text-align: right;
-			}
-
-			.bg-grey {
-  			background-color: #09c;
-			}
-
-			.estilo-contato {
-  			font: 400 15px Lato, sans-serif;
-  			line-height: 1.8;
-  			color:  rgba(128, 128, 128, 0.7);
-			}
-
-			.glyphicon-map-marker {
-  			font-size: 30px;
-			}
-
-			.glyphicon-phone {
-  			font-size: 30px;
-			}
-
-			.glyphicon-envelope {
-  			font-size: 30px;
-			}
-
-			/* Redes Sociais */
-			.btn-social {
- 				font-size: 18px;
-			}
-
-			/* Ícones Redes Sociais */
-			ul.social-network {
-        list-style: none;
-        display: inline;
-        margin-left:0 !important;
-        padding: 0;
-      }
-
-      ul.social-network li {
-        display: inline;
-        margin: 0 5px;
-  		}
-
-  		.bg-footer {
-   			color: white;
-  		}
-
-  		/* Quadros de Imagem */
-  		.painel {
-    		border-radius: 0;
-    		transition: box-shadow 0.5s;
-   		}
-
-   		.painel:hover {
-    		-moz-box-shadow: 6px 6px 12px rgba(0, 255, 153, 0.8);
-    		-webkit-box-shadow: 6px 6px 12px rgba(0, 255, 153, 0.8);
-    		box-shadow: 6px 6px 12px rgba(0, 255, 153, 0.8);
-   		}
-
-   		.botao:hover {
-    		background-color: rgba(0, 153, 204, 0.7);
-   		}
-
-   		.botao {
-    		margin: 10px;
-    		background-color:  rgba(0, 153, 204, 1);
-   		}
-
-   		/* Ícones */
-   		.logo-small {
-    		color: #09c;
-    		font-size: 50px;
-    		padding: 30px 25px;
-   		}
-
-   		/* Animação de deslizar para dentro (para usar use a classe .slideanim nos elementos) */
-   		.slideanim {visibility:hidden;}
-
-   		.slide {
-        /* The name of the animation */
-        animation-name: slide;
-        -webkit-animation-name: slide;
-        /* The duration of the animation */
-        animation-duration: 2s;
-        -webkit-animation-duration: 1s;
-        /* Make the element visible */
-        visibility: visible;
-      }
-
-      .logo {
-        padding: 0 15px;
-      }
-
-      .bg-experiencia {
-        background-color:  rgba(128, 128, 128, 0.06);
-      }
-
-      @media (max-width: 600px) {
-        .carousel-caption {
-        /* Hide the carousel text when the screen is less than 600 pixels wide */
-        display: none; 
-        }
-      }
-		</style>
-	</head>
-	<body id="logo" id="minhaPagina" data-spy="scroll" data-target=".navbar" data-offset="60">
-
-		<!-- Navbar -->   
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#meuNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand logo" href="#logo"><img src="assets/images/logo.svg.png" style="width: 60px; height: 60;"></a>
-        </div>
-        <div class="collapse navbar-collapse" id="meuNavbar">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#sobre">SOBRE</a></li>
-            <li><a href="#projetos">PROJETOS</a></li>
-            <li><a href="#experiencia">EXPERIÊNCIA</a></li>
-            <li><a href="#habilidades">HABILIDADES</a></li>
-            <li><a href="#contato">CONTATO</a></li>
-          </ul>
-        </div>
       </div>
-    </nav><br><br><br>
 
-		<!-- SOBRE -->
-		<div id="sobre" class="container text-center container-fluid">
-			<br><br>
-			<div class="row">
-				<div class="col-sm-12">
-					<br><br>
-					<img src="assets/images/Eu_6.jpg" class="img-circle person" alt="Foto do Autor" width="160" height="160">
-					<h1 style="font-size: 50px;">Hello World!</h1>
-					<h3>Web Developer Frontend e Backend | Game Developer</h3>
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" title="Toggle Menu" data-nav-toggle-btn>
+        <span class="one"></span>
+        <span class="two"></span>
+        <span class="three"></span>
+      </button>
 
-					<!-- LETREIRO DINÂMICO -->
-					<section  id="hero">
-						<div class="hero-container">
-							<h2>Vamos criar <span class="rotating" style="color: #09c;">design UI/UX, soluções web, sistemas integrados, arte 2D e 3D, jogos digitais, aplicações mobile, aplicações web</span>!</h2>
-						</div>
-					</section>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
 
-					<h4>A programação da vida a tecnologia digital! O que me fascina em desenvolver é ter nas ferramentas de programação o instrumento pelo qual posso tornar realidade minhas idéias e soluções para o mundo digital.</h4>
-					<br><br>
-				</div>
-			</div>
-		</div>
-    <br><br>
+          <li>
+            <a href="#home" class="navbar-link">Home.</a>
+          </li>
 
-		<!-- MEUS VALORES -->
-		<div  id="servico" class="container-fluid text-center slideanim">
-			<div class="row"> <!-- linha 1-->
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-qrcode logo-small"></span>
-					<h4>LÓGICA</h4>
-					<p style="color: gray;">Pensando com raciocínio lógico e a lógica da programação</p>
-				</div>
+          <li>
+            <a href="#about" class="navbar-link" data-translate="about">Sobre.</a>
+          </li>
 
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-heart logo-small"></span>
-					<h4>AMOR</h4>
-					<p style="color: gray;">Tenho paixão pelo que faço</p>
-				</div>
+          <li>
+            <a href="#skills" class="navbar-link" data-translate="skills">Habilidades.</a>
+          </li>
 
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-erase logo-small"></span>
-					<h4>TRABALHO REALIZADO</h4>
-					<p style="color: gray;">Nunca invento a roda novamente</p>
-				</div>
-			</div>
+          <li>
+            <a href="#portfolio" class="navbar-link" data-translate="portfolio">Portfolio.</a>
+          </li>
 
-			<div class="row"> <!-- linha 2-->
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-book logo-small"></span>
-					<h4>AUTODIDATA</h4>
-					<p style="color: gray;">Sempre em busca de conhecimento</p>
-				</div>
+          <li>
+            <a href="#contact" class="navbar-link" data-translate="contact_">Contato.</a>
+          </li>
 
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-baby-formula logo-small"></span>
-					<h4>CRIATIVIDADE</h4>
-					<p style="color: gray;">Dou asas a imaginação</p>
-				</div>
+        </ul>
+      </nav>
 
-				<div class="col-sm-4">
-					<span class="glyphicon glyphicon-wrench logo-small"></span>
-					<h4>TRABALHO DURO</h4>
-					<p style="color: gray;">Botando os neurônios pra funcionar</p>
-				</div>
-			</div>
-		</div><br><br>
+    </div>
+  </header>
 
-		<!-- PROJETOS -->
-		<div id="projetos" class="container">
-			<br><br><br>
-		</div>
+  <main>
+    <article class="container">
 
-		<div class="container-fluid text-center bg-grey slideanim">
-			<h2 style="color: white">Projetos Realizados</h2>
-			<br>
+      <!-- 
+        - #HERO
+      -->
+      <section class="hero" id="home">
 
-			<div class="row text-center">
-				
-			</div>
+        <figure class="hero-banner">
 
-			<!-- CARROSSEL DE PROJETOS -->
-			<div class="container">
-				<div class="resCarousel" data-items="1-2-3-3" data-slide="2">
-					<div class="resCarousel-inner">
-						<div class="item"> <!-- item 1 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/app-1.jpg" alt="Webflix">
-										<p style="padding: 15px"><strong style="color: black">WEBFLIX</strong></p>
-										<p style="color: black; padding: 5px;">Aplicação Web baseado no serviço online de streaming.</p>
-										<a href="https://netflix-react-firebase-jl.web.app/" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+          <picture>
+            <source srcset="./assets/images/hero-banner.png" media="(min-width: 768px)">
+            <source srcset="./assets/images/hero-banner-md.png" media="(min-width: 500px)">
+            <img src="./assets/images/hero-banner-sm.png" alt="A man in a brown cap in front of a laptop"
+              class="w-100">
+          </picture>
 
-						<div class="item"> <!-- item 2 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/app-4.jpg" alt="Moment Blog">
-										<p style="padding: 15px"><strong style="color: black">Moments Blog</strong></p>
-										<p style="color: black; padding: 5px;">Aplicação Web de blog para publicação de posts.</p>
-										<a href="https://moments-blog.netlify.app/posts" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+        </figure>
 
-						<div class="item"> <!-- item 3 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/app-2.jpg" alt="Dike Ecommerce">
-										<p style="padding: 15px"><strong style="color: black">DIKE ECOMMERCE</strong></p>
-										<p style="color: black; padding: 5px;">Aplicação Web eccommerce.</p>
-										<a href="https://react-dike-ecommerce.netlify.app/" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+        <div class="hero-content">
 
-						<div class="item"> <!-- item 4 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/app-3.jpg" alt="Expense Tracker">
-										<p style="padding: 15px"><strong style="color: black">EXPENSE TRACKER</strong></p>
-										<p style="color: black; padding: 5px;">Aplicação em NextJs com integração a banco de dados para controle de finanças.</p>
-										<a href="https://expense-tracker-react-teal.vercel.app/" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+          <h2 class="h2 hero-title" data-translate="heroTitle">Pojetar e construir produtos criativos</h2>
 
-						<div class="item"> <!-- item 5 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/EQ.jpg" alt="Chemical Memory Game">
-										<p style="padding: 15px"><strong style="color: black; ">CHEMICAL MEMORY GAME </strong></p>
-										<p style="color: black; padding: 5px;">Ajude nosso amigo químico a não destruir seu laboratório e a se livrar dos terríveis stickers memorizando os elementos da tabela periódica. Game disponível na Amazon AppStore.</p>
-										<a href="https://www.amazon.com/gp/product/B08GBZWLV9" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ir à loja</a>
-									</div>
-								</div>
-							</div>
-						</div>
+          <a href="#contact" class="btn btn-primary" data-translate="contact">Contato</a>
 
-						<div class="item"> <!-- item 6 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/SA.jpg" alt="Space Academy">
-										<p style="padding: 15px"><strong style="color: black">SPACE ACADEMY</strong></p>
-										<p style="color: black; padding: 5px;">Desenvolvido como trabalho de graduação, Space Academy é um aplicativo que usa os conceitos de gamificação em salas de aula para alunos do ensino fundamental.</p>
-										<a href="https://github.com/LeandroExhumed/SpaceAcademy"  style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+        </div>
 
-						<div class="item"> <!-- item 7 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/TA.jpg" alt="Twin Ape">
-										<p style="padding: 15px"><strong style="color: black">TWIN APE</strong></p>
-										<p style="color: black; padding: 5px;">Uma aventura épica com os simeos gêmeos na torre Yamuna. Twin Ape é um game de controles simultâneos, obstáculos e bananas pra comer à vontade!</p>
-										<a href="https://www.amazon.com/gp/product/B08GC2ZC4Q" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ir à loja</a>
-									</div>
-								</div>
-							</div>
-						</div>
+        <ul class="hero-social-list">
 
-						<div class="item"> <!-- item 8 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/MD.jpg" alt="Mr Dollar">
-										<p style="padding: 15px"><strong style="color: black">MR DOLLAR</strong></p>
-										<p style="color: black; padding: 5px;">Um divertido jogo de cartas que desafia a memória e estimula seus reflexos. Ajude Mr Dollar a recuperar sua fortuna e dar a volta por cima.</p>
-										<a href="https://github.com/jlsystemabc/Mr-Dollar.git" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+          <li>
+            <a href="https:facebook.com.br" target="_blank" class="hero-social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
 
-						<div class="item"> <!-- item 9 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/TC.jpg" alt="Tower Crush">
-										<p style="padding: 15px"><strong style="color: black">TOWER CRUSH</strong></p>
-										<p style="color: black; padding: 5px;">Tower Crush é um jogo indie épico onde você constrói 1 torre, até 6 andares e muitas armas. Você evolui e desafia seus oponentes em batalhas fantásticas.</p>
-										<a style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
+              <div class="tooltip">Facebook</div>
+            </a>
+          </li>
 
-						<div class="item"> <!-- item 10 -->
-							<div class="tile">
-								<div class="col-sm-4">
-									<div class="thumbnail painel" style="background-color: white;">
-										<img src="assets/images/app-5.jpg" alt="Controle de Despesas">
-										<p style="padding: 15px"><strong style="color: black">Controle de Despesas</strong></p>
-										<p style="color: black; padding: 5px;">Aplicação feita em Angular 17 para controle de despesas.</p>
-										<a href="https://controle-despesas-angular.vercel.app/" style="color: white;" class="btn btn-sm botao" role="button" target="_blank">Ver Projeto</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-					<button class='btn btn-default leftRs'><</button>
-          <button class='btn btn-default rightRs'>></button>
-				</div>
-			</div>
-		</div>
+          <li>
+            <a href="https://x.com/" target="_blank" class="hero-social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
 
-		<!-- EXPERIÊNCIA -->
-		<div   id="experiencia" class="container">
-			<br><br>
-		</div>
+              <div class="tooltip">Twitter</div>
+            </a>
+          </li>
 
-		<div class="container">
-			<h2 class="text-center">Experiência</h2>
-		</div>
+          <li>
+            <a href="https:linkedin.com.br" target="_blank" class="hero-social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
 
-		<div class="container slideanim">
-			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" href="#home-0">Formação</a></li>
-				<li><a data-toggle="tab" href="#menu_1">Experiência</a></li>
-				<li><a data-toggle="tab" href="#menu_2">Tecnologias</a></li>
-			</ul>
-			<div class="tab-content">
-				<div id="home-0" class="tab-pane fade in active bg-experiencia"> <!-- aba 1 -->
-					<h3 class="text-center">Análise e desenvolvimento de sistemas</h3><br> 
-					<ul style="color: gray;">
-						<li>Formação em Análise e Desenvolvimento de Sistemas - Faculdade de Tecnologia de Carapicuíba - Fatec SP</li>
-						<li>Inglês pronuncia básica e leitura avançada</li>
-					</ul>
-				</div>
+              <div class="tooltip">Linkedin</div>
+            </a>
+          </li>
 
-				<div id="menu_1" class="tab-pane fade bg-experiencia"> <!-- aba 2 -->
-					<h3 class="text-center"><a href="https://www.qmedia.com.br/" target="_blank" title="QMedia">QMedia</a></h3>
-						<h4 class="text-center">Web Frontend e Backend</h4>
-						<p class="text-center">Atual</p><br>
-						<h4 style="padding-left: 26px">Habilidades adquiridas:</h4>
-						<ul style="color: grey">
-							<li>Desenvolvimento Web Frontend e Backend
-							</li>
-							<li>Integração e manutenção de funcionalidades e recursos junto a equipe de desenvolvimento com uso de métodologia Ágil Scrum
-							</li>
-							<li>Uso de Javascript com a biblioteca React e framework Angular
-							</li>
-							<li>Uso do framework NextJs
-							</li>
-							<li>Microserviços, documentação e testes
-							</li>
-							<li>Design de aplicação no modelo MVC
-							</li>
-							<li>Uso de RESTful
-							</li>
-							<li>Design responsivo mobile-first com UI/UX
-							</li>
-							<li>Uso do sistema de gestão de controle de versão distribuída GIT
-							</li>
-							<li>Uso de banco de dados: Mongo DB, MySQL Server
-							</li>
-						</ul>
-						<hr>
-						<h3 class="text-center"><a href="http://topwebsites.com.br/" target="_blank" title="TopWeb">Top Web Sites</a></h3>
-						<h4 class="text-center">Web Frontend</h4>
-						<p class="text-center">Outubro 2016 - Junho 2019</p><br>
-						<h4 style="padding-left: 26px">Habilidades adquiridas:</h4>
-						<ul style="color: grey">
-							<li>Criação de sites Frontend. Lojas e blogs com uso de HTML, CSS, Javasript, JQuery, Wordpress
-							</li>
-							<li>Criação e implementação de UI/UX
-							</li>
-							<li>Criação de Landing Pages, Folders
-							</li>
-							<li>Adobe XD para protótipos, teste e depuração de código com as ferramentas do navegador
-							</li>
-						</ul>
-						<hr>
-						<h3 class="text-center"><a href="http://www.rommanel.com.br/" target="_blank" title="Rommanel">Rommanel Jóias e Semi-jóias</a></h3>
-						<h4 class="text-center">Web Frontend Webdesign</h4>
-						<p class="text-center">Setembro 2014 - Março 2015</p><br>
-						<h4 style="padding-left: 26px">Habilidades adquiridas:</h4>
-						<ul style="color: grey">
-							<li>Tratamento de imagens, criação de banners, e campanhas de trade marketing
-							</li>
-							<li>Design visual de páginas com IU/UX
-							</li>
-							<li>Criação de folders, folhetos, cartões e gifs animados
-							</li>
-						</ul>
-						<hr>
-						<h3 class="text-center"><a href="http://www.hbgamespy.com/" target="_blank" title="HB Gameshop">HB Gameshop</a></h3>
-						<h4 class="text-center">Web Frontend Webdesign</h4>
-						<p class="text-center">Freelancer</p><br>
-						<h4 style="padding-left: 26px">Habilidades adquiridas:</h4>
-						<ul style="color: grey">
-							<li>Desenvolvimento Web Frontend</li>
-							<li>Planejar, arquitetar, especificar e implementar soluções com uso de Javascript, PHP e Node Js</li>
-						</ul>
-						<hr>
-						<h3 class="text-center">Jaquellinis</h3>
-						<h4 class="text-center">Web Frontend Webdesign</h4>
-						<p class="text-center">Freelancer</p><br>
-						<h4 style="padding-left: 26px">Habilidades adquiridas:</h4>
-						<ul style="color: grey">
-							<li>Layout e codificação de páginas em HTML, CSS e Javascript</li>
-							<li>Design responsivo com UI/UX</li>
-						</ul>
-						<hr>
-				</div>
+        </ul>
 
-				<div id="menu_2" class="tab-pane fade bg-experiencia"> <!-- aba 3 -->
-					<h3 class="text-center">Possuo experiências nas seguintes tecnologias da web:</h3>
-					<div style="padding-left: 30px;">
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/sass.png" alt="sass" title="Sass">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/angular.png" alt="angular" title="Angular">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/node.png" alt="node js" title="Node Js">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/react.png" alt="react js" title="React Js">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/mongo.png" alt="mongo db" title="Mongo DB">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/mysql.png" alt="mysql" title="Mysql">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/php.png" alt="php" title="PHP">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/tailwind.png" alt="tailwind" title="Tailwind">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/redux.png" alt="redux" title="Redux">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/csharp.png" alt="csharp" title="CSharp">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/vite.png" alt="vitejs" title="Vite Js">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/nextjs.png" alt="nextjs" title="Next Js">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/js.png" alt="JS" title="Js">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/css.png" alt="CSS" title="CSS">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/html.png" alt="HTML" title="HTML">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/git.png" alt="Git" title="Git">
-						</div>
-						<div style="float: left; padding: 15px;">
-							<img style="height: 40px; width: 40px;" src="assets/images/jquery.png" alt="JQuery" title="JQuery">
-						</div>
-					</div>
-				</div>	
-			</div>	
-		</div><br><br><br>
+        <a href="#stats" class="scroll-down">Scroll</a>
 
+      </section>
 
-		<!-- HABILIDADE -->
-		<div  id="habilidades" class="container-fluid">
-		  <br><br>
-		</div>
+      <!-- 
+        - #STATS
+      -->
+      <section class="stats" id="stats">
+        <ul class="stats-list">
 
-		<div class="container">
-		<div  class="row">
-		 	<h2 class="text-center">Habilidades</h2>
-		 	<hr />
-		</div>
-		<div class="row">
-		 	<div class=" col-sm-12">
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 73%;" data-toggle="tooltip" data-placement="top" title="Semântica e acessibilidade, estrutura de tags, atributos e propriedades.">
-		 				<span class="sr-only">73% Complete</span>
-		 				<span class="progress-type">html / html 5</span>
-		 				</div>
-		 		</div>
+          <li>
+            <a href="#" class="stats-card">
 
-				<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 73%;" data-toggle="tooltip" data-placement="top" title="Edição e elaboração de vídeos.">
-		 				<span class="sr-only">90% Complete</span>
-		 				<span class="progress-type">Adobe Premiere</span>
-		 			</div>
-		 		</div>
+              <div class="card-icon">
+                <img src="./assets/images/stats-card_icon-1.png" alt="Badge icon">
+              </div>
 
-				<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 73%;" data-toggle="tooltip" data-placement="top" title="Ilustrações e gráficos em 2D vetorizado.">
-		 				<span class="sr-only">70% Complete</span>
-		 				<span class="progress-type">Adobe Illustrator</span>
-		 			</div>
-		 		</div>
+              <h2 class="h2 card-title">
+                7+ <strong data-translate="yearsOfExperience">Anos de Experiência</strong>
+              </h2>
 
-				 <div class="progress">
-					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 73%;" data-toggle="tooltip" data-placement="top" title="Criação de componentes e estrutura de fluxo de estados para a UI.">
-						<span class="sr-only">70% Complete</span>
-						<span class="progress-type">React Js</span>
-					</div>
-				</div>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 64%;" data-toggle="tooltip" data-placement="top" title="Propriedades avançadas de CSS, pseudo-classes, 3d transforms, gradientes.">
-		 				<span class="sr-only">64% Complete</span>
-		 				<span class="progress-type">css / css3</span>
-		 			</div>
-		 		</div>
+            </a>
+          </li>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 45%;" data-toggle="tooltip" data-placement="top" title="Boas práticas de programação, events, arrays, type conversion.">
-		 				<span class="sr-only">45% Complete</span>
-		 				<span class="progress-type">Javascript</span>
-		 			</div>
-		 		</div>
+          <li>
+            <a href="#" class="stats-card">
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 35%;" data-toggle="tooltip" data-placement="top" title="Uso de gets e Sets, Callback, Jquery Css Classes.">
-		 				<span class="sr-only">35% Complete</span>
-		 				<span class="progress-type">Jquery</span>
-		 			</div>
-		 		</div>
+              <div class="card-icon">
+                <img src="./assets/images/stats-card_icon-2.png" alt="Checkmark icon">
+              </div>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 76%;" data-toggle="tooltip" data-placement="top" title="Domínio em estruturas mobile-first, grids, modal, affix.">
-		 				<span class="sr-only">76% Complete</span>
-		 				<span class="progress-type">Bootstrap</span>
-		 			</div>
-		 		</div>
+              <h2 class="h2 card-title">
+                40+ <strong data-translate="completedProjects">Projetos Realizados</strong>
+              </h2>
 
-		 		<div class="progress">
-		 			<div div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 46%;" data-toggle="tooltip" data-placement="top" title="Uso de Superglobals, cruds, form url/email, form validation, cookies.">
-		 				<span class="sr-only">46% Complete</span>
-		 				<span class="progress-type">Php</span>
-		 			</div>
-		 		</div>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 36%;" data-toggle="tooltip" data-placement="top" title="Criação de tabelas, select, create, drop, consulta de dados.">
-		 				<span class="sr-only">36% Complete</span>
-		 				<span class="progress-type">Sql</span>
-		 			</div>
-		 		</div>
+            </a>
+          </li>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"style="width: 36%;" data-toggle="tooltip" data-placement="top" title="Metodologia ágil, gestão de projetos, timebox, sprints.">
-		 				<span class="sr-only">36% Complete</span>
-		 				<span class="progress-type">Scrum</span>
-		 			</div>
-		 		</div>
+          <li>
+            <a href="#" class="stats-card">
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"style="width: 78%;" data-toggle="tooltip" data-placement="top" title="Tratamento de imagem, grids,redimensionamento, máscaras, layers.">
-		 				<span class="sr-only">78% Complete</span>
-		 				<span class="progress-type">Photoshop</span>
-		 			</div>
-		 		</div>
+              <div class="card-icon">
+                <img src="./assets/images/stats-card_icon-3.png" alt="Peoples rating icon">
+              </div>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"style="width: 70%;" data-toggle="tooltip" data-placement="top" title="Domínio em estrutura, sintaxe, classes,interfaces, atributos.">
-		 				<span class="sr-only">70% Complete</span>
-		 				<span class="progress-type">C sharp</span>
-		 			</div>
-		 		</div>
+              <h2 class="h2 card-title">
+                1000+ <strong data-translate="codeWritten">Linhas de código escritas</strong>
+              </h2>
 
-		 		<div class="progress">
-		 			<div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"style="width: 76%;" data-toggle="tooltip" data-placement="top" title="Criação de repositórios, clone, branches,commits, merges, atualização e publicação.">
-		 				<span class="sr-only">76% Complete</span>
-		 				<span class="progress-type">Git</span>
-		 			</div>
-		 		</div>
+              <ion-icon name="chevron-forward-outline"></ion-icon>
 
-		 		<div class="progress-meter">
-		 			<div class="meter meter-left" style="width: 25%;"><span class="meter-text">BÁSICO</span></div>
-		 			<div class="meter meter-left" style="width: 25%;"><span class="meter-text">INTERMEDIÁRIO</span></div>
-		 			<div class="meter meter-right" style="width: 30%;"><span class="meter-text">MESTRE</span></div>
-		 		</div>
-		 	</div>
-		</div>
-		<br><br><br>
+            </a>
+          </li>
 
-	  <!-- CONTATO -->
-	  <div id="contato" class="container-fluid">
-      <br><br><br>
-      <h2 class="text-center">Contato</h2>
-      <br><br><br>
-	  </div>
+        </ul>
+      </section>
 
-	  <div id="contato" class="container-fluid estilo-contato">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="text-center">
-            <p><span class="glyphicon glyphicon-map-marker"></span><br>São Paulo - SP</p>
-            <p><span class="glyphicon glyphicon-phone"></span> <br>WhatsApp: (11) 97668-2157</p>
-            <p><span class="glyphicon glyphicon-envelope"></span> <br>E-mail: jlsystemabc@hotmail.com</p>
+      <!-- 
+        - #ABOUT
+      -->
+      <section class="about" id="about">
+
+        <figure class="about-banner">
+          <img src="./assets/images/about-banner.png" alt="A thoughtful boy in a cap."
+            class="w-100">
+        </figure>
+
+        <div class="about-content section-content">
+
+          <p class="section-subtitle" data-translate="aboutMe">Sobre Eu</p>
+
+          <h2 class="h3 section-title" data-translate="aboutTitle">Presica de um produto criativo? Eu posso lhe ajudar!</h2>
+
+          <p class="section-text" data-translate="aboutText">
+            Olá! Sou José Luiz, um desenvolvedor apaixonado por criar aplicações web limpas com funcionalidades intuitivas. Gosto do processo de transformar idéias em realidade usando soluções criativas. Estou sempre curioso sobre aprender novas habilidades, ferramentas e conceitos. Além de trabalhar em vários projetos solo full stack, trabalhei com equipes criativas, o que envolve reuniões e comunicações diárias, controle de origem e gerenciamento de projetos.
+          </p>
+
+          <div class="btn-group">
+            <button class="btn btn-secondary" onclick="window.open('https://github.com/', '_blank')" data-translate="btnSecondary">
+              Repositório
+            </button>
+
+            <button class="btn btn-primary" data-translate="btnPrimary" id="downloadCV">Baixar CV</button>
           </div>
+
         </div>
-      </div>
-	  </div>
 
-		 <!-- REDES SOCIAIS -->
-		<div class="container">
-		  <div class="row">
-		 		<ul class="list-inline text-center">
-		 			<li><a class="btn btn-block btn-social btn-facebook" href="https://www.facebook.com/jluiz.santos.3" target="_blank" title="Facebook"><span class="fa fa-facebook"></span></a></li>
-		 			<li><a class="btn btn-block btn-social btn-linkedin" title="Linkedin"><span class="fa fa-linkedin"></span></a></li> 
-		 			<li><a class="btn btn-block btn-social btn-github" href="https://github.com/jl-santos" target="_blank" title="Github"><span class="fa fa-github"></span></a></li> 
-		 		</ul>
-		  </div>
-		</div><br><br>
+      </section>
 
-		<!-- RODAPÉ -->
-		<footer class="container-fluid text-center">
-		  <a href="#logo" title="Ir para o topo da página"><span class="glyphicon glyphicon-chevron-up"></span></a>
-		</footer>
+      <!-- 
+        - #SKILLS
+      -->
+      <section class="skills" id="skills">
 
-		<dir class="container-fluid footer-bottom bg-grey bg-footer">
-		 	<p class="text-center"> Copyright © JL Portfolio <span id="year"></span>. All right reserved. </p>
-		 	<p class="text-center">Tema Bootstrap feito por <a style="color: #039;" href="#jl" title="José Luiz">JLSystem</a></p>
-		</dir>
+        <div class="skills-content section-content">
 
-   	<!--SCRIPTS-->
-   	<!-- BARRA DE ESPAÇO -->
+          <p class="section-subtitle" data-translate="titleSkills">Habilidades</p>
 
-		<script>
-			let data = new Date();
-			let year = data.getFullYear();
-			document.getElementById('year').innerText = year;
-		</script>
+          <h2 class="h3 section-title" data-translate="textSubtitleSkills">Quais são minhas habilidades de programação?</h2>
 
-		<script>
-		 	$(function () {
-		 		$('[data-toggle="tooltip"]').tooltip();
-		 	});
-		</script>
+          <p class="section-text" data-translate="skillsText">
+            Eu crio sistemas no back-end, assim como interfaces de usuário no front-end, que são fáceis de usar, intuitivas e adaptáveis, permitindo que os usuários completem suas tarefas de forma mais rápida e com menos esforço utilizando essas tecnologias.
+          </p>
 
-		<!-- MOSTRUÁRIO -->
-		<script>
-		</script>
+          <div class="skills-toggle" data-toggle-box>
+            <button class="toggle-btn active" data-toggle-btn>Skills</button>
 
-		<!-- CARROSSEL DE PROJETOS -->
-		<script>
-		 	//ResCarouselCustom();
-		 	var pageRefresh = true;
+            <button class="toggle-btn" data-toggle-btn>Tools</button>
+          </div>
 
-		 	function ResCarouselCustom() {
-		 		var items = $("#dItems").val(),
-		 		slide = $("#dSlide").val(),
-		 		speed = $("#dSpeed").val(),
-		 		interval = $("#dInterval").val()
+        </div>
 
-		 		var itemsD = "data-items=\"" + items + "\"",
-		 		slideD = "data-slide=\"" + slide + "\"",
-		 		speedD = "data-speed=\"" + speed + "\"",
-		 		intervalD = "data-interval=\"" + interval + "\"";
+        <div class="skills-box" data-skills-box>
 
-		 		var atts = "";
-		 		atts += items != "" ? itemsD + " " : "";
-		 		atts += slide != "" ? slideD + " " : "";
-		 		atts += speed != "" ? speedD + " " : "";
-		 		atts += interval != "" ? intervalD + " " : ""
+          <ul class="skills-list">
 
-		 		//console.log(atts);
-		 		var dat = "";
-		 		dat += '<h4 >' + atts + '</h4>'
-		 		dat += '<div class=\"resCarousel\" ' + atts + '>'
-		 		dat += '<div class="resCarousel-inner">'
-		 		for (var i = 1; i <= 14; i++) {
-		 		  dat += '<div class=\"item\"><div><h1>' + i + '</h1></div></div>'
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">HTML5</div>
 
-		 		  dat += '</div>'
-		 		  dat += '<button class=\'btn btn-default leftRs\'><i class=\"fa fa-fw fa-angle-left\"></i></button>'
-		 		  dat += '<button class=\'btn btn-default rightRs\'><i class=\"fa fa-fw fa-angle-right\"></i></button></div>'
-		 		  console.log(dat);
-		 		  $("#customRes").html(null).append(dat);
+                <div class="card-icon">
+                  <img src="./assets/images/html5.png" alt="HTML5 logo">
+                </div>
+              </div>
+            </li>
 
-		 		  if (!pageRefresh) {
-		 		    ResCarouselSize();
-		 		  } else {
-		 			  pageRefresh = false;
-		 		  }
-		 		  //ResCarouselSlide();
-		    }
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">CSS3</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/css3.png" alt="CSS3 logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">JavaScript</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/javascript.png" alt="JavaScript logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">TypeScript</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/typescript.png" alt="TypeScript logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">NextJs</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/next-js.png" alt="TypeScript logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">jQuery</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/jquery.png" alt="jQuery logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Bootstrap</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/bootstrap.png" alt="Bootstrap logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Angular</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/angular.png" alt="Angular logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">React</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/react.png" alt="React logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Vue</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/vue.png" alt="Vue logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Firebase</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/firebase.png" alt="Firebase logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">PugJs</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/pugjs.png" alt="PugJs logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">SASS</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/sass.png" alt="SASS logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Tailwind CSS</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/tailwind-css.png" alt="SASS logo">
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <ul class="tools-list">
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Ajax</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/ajax.png" alt="Ajax logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Gulp</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/gulp.png" alt="Gulp logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Webpack</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/webpack.png" alt="Webpack logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Git</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/git.png" alt="Git logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Npm</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/npm.png" alt="Npm logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Command Line</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/command.png" alt="Command Line logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">VS Code</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/vs-code.png" alt="VS Code logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Trello</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/trello.png" alt="Trello logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">ClickUp</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/clickup.png" alt="ClickUp logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Slack</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/slack.png" alt="Slack logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Photoshop</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/photoshop.png" alt="Photoshop logo">
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="skill-card">
+                <div class="tooltip">Adobe XD</div>
+
+                <div class="card-icon">
+                  <img src="./assets/images/adobe-xd.png" alt="Adobe XD logo">
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+      <!-- 
+        - #PROJECTS
+      -->
+      <section class="project" id="portfolio">
+
+        <ul class="project-list">
+
+          <li>
+            <div class="project-content section-content">
+
+              <p class="section-subtitle" data-translate="worksProjectsTitle">Trabalhos e Projetos</p>
+
+              <h2 class="h3 section-title" data-translate="workDoneSubtitle">Veja meus trabalhos realizados e projetos pessoais!</h2>
+
+              <p class="section-text" data-translate="textWorkDone">
+                Desenvolvo aplicações de alta performance, pensadas para oferecer durabilidade e eficiência. Cada interface é cuidadosamente elaborada para ser intuitiva, minimalista e elegante, garantindo uma experiência acessível e agradável para todos os usuários.
+              </p>
+
+            </div>
+          </li>
+
+          <li>
+            <a href="https://netflix-react-firebase-jl.web.app/" target="_blank" class="project-card">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-1.png" class="w-100" alt="A macintosh on a yellow background.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle01">WEBFIX <span> </span> JS | CSS | HTML </h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://react-dike-ecommerce.netlify.app/" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-2.png" class="w-100" alt="On a Blue background, a Wacom and a mouse.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle02">DIKE<span> </span> JS | CSS | HTML | MONGO DB | NEXTJS</h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://expense-tracker-react-teal.vercel.app/" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-3.png" class="w-100"
+                  alt="A Cassette tape on a mellow apricot background.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle03">EXPENSE TRACKER<span> </span> JS | CSS | HTML | REACTJS</h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://moments-blog.netlify.app/posts" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-4.png" class="w-100"
+                  alt="Blue digital watch on a dark liver background.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle04">Moments <span> </span> JS | CSS | HTML | MONGO DB</h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://controle-despesas-angular.vercel.app/" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-5.png" class="w-100"
+                  alt="On a dark liver background, Airport luggage car carrying a luggage.">
+              </figure>
+
+              <div class="card-content" target="_blank">
+                <h3 class="h4 card-title" data-translate="cardTitle05">EXPENSE CONTROL<span> </span> ANGULAR</h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://github.com/" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-6.png" class="w-100"
+                  alt="On a yellow background, a digital watch and a glass.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle06">SPACE ACADEMY<span> </span> ANGULAR | MONGO DB</h3>
+              </div>
+
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.amazon.com/gp/product/B08GC2ZC4Q" class="project-card" target="_blank">
+
+              <figure class="card-banner">
+                <img src="./assets/images/project-7.png" class="w-100"
+                  alt="A fujifilm instant camera on a dark electric blue background.">
+              </figure>
+
+              <div class="card-content">
+                <h3 class="h4 card-title" data-translate="cardTitle07">TWIN APE<span> </span> UNITY 3D</h3>
+              </div>
+
+            </a>
+          </li>
+
+        </ul>
+
+      </section>
+
+      <!-- 
+        - #CONTACT
+      -->
+      <section class="contact" id="contact">
+
+        <div class="contact-content section-content">
+
+          <p class="section-subtitle" data-translate="contactFormTitle">Contato</p>
+
+          <h2 class="h3 section-title" data-translate="textContactFormSubtitle">Você tem algum projeto? Por favor, deixe uma mensagem</h2>
+
+          <p class="section-text" data-translate="textContact">
+            Entre em contato e me diga como posso lhe ajudar. Preencha o formulário e entrarei em contato o mais breve possível.
+          </p>
+
+          <ul class="contact-list">
+
+            <li class="contact-list-item">
+
+              <div class="contact-item-icon">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title" data-translate="location">Localização:</h3>
+
+                <address class="contact-info">
+                  São Paulo - SP
+                </address>
+              </div>
+
+            </li>
+
+            <li class="contact-list-item">
+
+              <div class="contact-item-icon">
+                <ion-icon name="call-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title">Whatsapp</h3>
+
+                <a href="tel:01234567789" class="contact-info">(11) 97668-2157</a>
+
+              </div>
+
+            </li>
+
+            <li class="contact-list-item">
+
+              <div class="contact-item-icon">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="wrapper">
+                <h3 class="h4 contact-item-title">Email:</h3>
+
+                <a href="mailto:info@jack.com" class="contact-info">jlsystemabc@hotmail.com</a>
+
+                <a href="mailto:support@jack.com" class="contact-info">jlsystemabc123@gmail.com</a>
+              </div>
+
+            </li>
+
+            <li>
+              <ul class="contac-social-list">
+
+                <li>
+                  <a href="https:facebook.com.br" target="_blank" class="contact-social-link">
+                    <div class="tooltip">Facebook</div>
+
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://x.com/" target="_blank" class="contact-social-link">
+                    <div class="tooltip">Twitter</div>
+
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https:linkedin.com.br" target="_blank" class="contact-social-link">
+                    <div class="tooltip">Linkedin</div>
+
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.youtube.com/" target="_blank" class="contact-social-link">
+                    <div class="tooltip">Youtube</div>
+
+                    <ion-icon name="logo-youtube"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <form id="contact-form">
+
+          <div class="form-wrapper">
+
+            <label for="name" class="form-label" data-translate="name">Nome</label>
+
+            <div class="input-wrapper">
+
+              <input type="text" name="name" id="name" required class="input-field">
+
+              <ion-icon name="person-circle"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="email" class="form-label" data-translate="email">Email</label>
+
+            <div class="input-wrapper">
+
+              <input type="email" name="email" id="email" required
+                class="input-field">
+
+              <ion-icon name="mail"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="phone" class="form-label" data-translate="telephone">Telefone</label>
+
+            <div class="input-wrapper">
+
+              <input type="tel" name="phone" id="phone" required class="input-field">
+
+              <ion-icon name="call"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <div class="form-wrapper">
+
+            <label for="message" class="form-label" data-translate="message">Mensagem</label>
+
+            <div class="input-wrapper">
+
+              <textarea name="message" id="message" required
+                class="input-field"></textarea>
+
+              <ion-icon name="chatbubbles"></ion-icon>
+
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-primary" data-translate="sendButton">Enviar</button>
+
+        </form>
+
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+  <footer class="footer">
+    <div class="container">
+
+      <p class="h1 logo">
+        <a href="#">
+          J-Luiz<span>.</span>
+        </a>
+      </p>
+
+      <p class="copyright">
+        <!-- &copy; 2022 <a href="#">Jlsystem</a>. All rights reserved -->
+        &copy; 
+        <script>
+          // Cria a variável dataYear com o ano atual
+          let dataYear = new Date().getFullYear();
+          // Exibe o ano diretamente dentro do parágrafo
+          document.write(dataYear);
+        </script> <a href="#">Jlsystem</a>. All rights reserved
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #GO TO TOP
+  -->
+  <a href="#top" class="go-top" data-go-top title="Go to Top">
+    <ion-icon name="arrow-up"></ion-icon>
+  </a>
+
+  <script type="text/javascript">
+    (function() {
+      // Inicialize o EmailJS com a sua Public Key
+      emailjs.init("w4bmGUqYkAZ0ufjoF");  // Substitua "YOUR_PUBLIC_KEY" pela sua Public Key do EmailJS
+    })();
+  
+    // Envio do formulário
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const form = this; // Armazena a referência explícita ao formulário
+  
+      // Coleta os dados do formulário
+      var formData = new FormData(this);
+  
+      // Envia os dados para o EmailJS
+      emailjs.sendForm("service_lyd7i4n", "template_m7z0m8d", this)
+        .then(function(response) {
+          alert("Mensagem enviada com sucesso!", response);
+          
+          // Limpa todos os campos do formulário
+          form.reset(); // `this` é o formulário
+        }, function(error) {
+          alert("Erro ao enviar a mensagem. Tente novamente.", error);
+        });
+    });
+  </script>
+
+  <script>
+    document.getElementById('downloadCV').addEventListener('click', function() {
+      // URL do arquivo PDF na pasta local
+      const pdfUrl = 'https://jlsystemabc.github.io/portfolio/assets/pdfs/curriculo.pdf'; // Caminho para o PDF dentro do repositório
+
+      // Criando um link temporário para o download
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Curriculo_Jose_Luiz.pdf';  // Nome do arquivo a ser baixado
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+
+  <script>
+    const translations = {
+      en: {
+        home: "Home.",
+        about: "About.",
+        skills: "Skills.",
+        portfolio: "Portfolio.",
+        contact: "Contact",
+        contact_: "Contact.",
+        heroTitle: "Design and build creative products",
+        aboutTitle: "Need a creative product? I can help you!",
+        aboutText: "Hello! I’m José Luiz, a developer passionate about creating clean web applications with intuitive features.",
+        skillsTitle: "What are my programming skills?",
+        skillsText: "I create systems in the back-end, as well as user interfaces in the front-end that are easy to use, intuitive, and adaptable.",
+        projectTitle: "See my completed work and personal projects!",
+        contactTitle: "Do you have a project? Please leave a message",
+        yearsOfExperience: "Years of experience",
+        completedProjects: "Completed Projects",
+        codeWritten: "Lines of code written",
+        aboutMe: "About Me",
+        sectionTitle: "Need a creative product? I can help you!",
+        sectionText: "I create back-end systems as well as front-end user interfaces that are easy to use, intuitive, and adaptable, enabling users to complete their tasks faster and with less effort using these technologies.",
+        btnSecondary: "Repository",
+        btnPrimary: "Download CV",
+        titleSkills: "Skills",
+        textSubtitleSkills: "What are my programming skills?",
+        textSkills: "I create back-end systems as well as front-end user interfaces that are easy to use, intuitive, and adaptable, enabling users to complete their tasks faster and with less effort using these technologies.",
+        worksProjectsTitle: "Works and Projects",
+        workDoneSubtitle: "See my completed work and personal projects!",
+        textWorkDone: "I create a high-quality application that is designed to last. The interface, which is well detailed, is intuitive, simple and sophisticated, making it easy to use for any user, even without technical knowledge.",
+        cardTitle01: "",
+        cardTitle02: "",
+        cardTitle03: "",
+        cardTitle04: "",
+        cardTitle05: "",
+        cardTitle06: "",
+        cardTitle07: "",
+        contactFormTitle: "Contact",
+        textContactFormSubtitle: "Do you have any project? Please leave a message",
+        textContact: "Get in touch and let me know how I can help you. Fill out the form and I'll get back to you as soon as possible.",
+        location: "Location",
+        name: "Name",
+        telephone: "Telephone",
+        message: "Message",
+        sendButton: "Send",
+        // Adicione outras traduções conforme necessário...
+      },
+      br: {
+        home: "Home.",
+        about: "Sobre.",
+        skills: "Habilidades.",
+        portfolio: "Portfolio.",
+        contact: "Contato",
+        contact_: "Contato.",
+        heroTitle: "Pojetar e construir produtos criativos",
+        aboutTitle: "Precisa de um produto criativo? Eu posso lhe ajudar!",
+        aboutText: "Olá! Sou José Luiz, um desenvolvedor apaixonado por criar aplicações web limpas com funcionalidades intuitivas.",
+        skillsTitle: "Quais são minhas habilidades de programação?",
+        skillsText: "Eu crio sistemas no back-end, assim como interfaces de usuário no front-end, que são fáceis de usar, intuitivas e adaptáveis.",
+        projectTitle: "Veja meus trabalhos realizados e projetos pessoais!",
+        contactTitle: "Você tem algum projeto? Por favor, deixe uma mensagem",
+        yearsOfExperience: "Anos de Experiência",
+        completedProjects: "Projetos Realizados",
+        codeWritten: "Linhas de código escritas",
+        aboutMe: "Sobre Eu",
+        sectionTitle: "Presica de um produto criativo? Eu posso lhe ajudar!",
+        sectionText: "Crio sistemas back-end e interfaces de usuário front-end que são fáceis de usar, intuitivas e adaptáveis, permitindo que os usuários concluam suas tarefas mais rapidamente e com menos esforço usando essas tecnologias.",
+        btnSecondary: "Repositório",
+        btnPrimary: "Baixar CV",
+        titleSkills: "Habilidades",
+        textSubtitleSkills: "Quais são minhas habilidades de programação?",
+        textSkills: "Eu crio sistemas back-end e interfaces de usuário front-end que são fáceis de usar, intuitivas e adaptáveis, permitindo que os usuários concluam suas tarefas mais rapidamente e com menos esforço usando essas tecnologias.",
+        worksProjectsTitle: "Trabalhos e Projetos",
+        workDoneSubtitle: "Veja meus trabalhos concluídos e projetos pessoais!",
+        textWorkDone: "Desenvolvo aplicações de alta performance, pensadas para oferecer durabilidade e eficiência. Cada interface é cuidadosamente elaborada para ser intuitiva, minimalista e elegante, garantindo uma experiência acessível e agradável para todos os usuários.",
+        cardTitle01: "",
+        cardTitle02: "",
+        cardTitle03: "",
+        cardTitle04: "",
+        cardTitle05: "",
+        cardTitle06: "",
+        cardTitle07: "",
+        contactFormTitle: "Contato",
+        textContactFormSubtitle: "Você tem algum projeto? Por favor, deixe uma mensagem",
+        textContact: "Entre em contato e me diga como posso ajudar você. Preencha o formulário e entrarei em contato com você o mais breve possível.",
+        location: "Localização",
+        name: "Nome",
+        telephone: "Telefone",
+        message: "Mensagem",
+        sendButton: "Enviar",
+        // Adicione outras traduções conforme necessário...
       }
+    };
 
-		  $("#eventLoad").on('ResCarouselLoad', function() {
-        //console.log("triggered");
-        var dat = "";
-        var lenghtI = $(this).find(".item").length;
-        if (lenghtI <= 30) {
-          for (var i = lenghtI; i <= lenghtI + 10; i++) {
-            dat += '<div class="item"><div class="tile"><div><h1>' + (i + 1) + '</h1></div><h3>Title</h3><p>content</p></div></div>'
-          }
-          $(this).append(dat);
+    // Função para atualizar o conteúdo da página com base no idioma
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-translate]');
+
+      elements.forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
         }
       });
-		</script>
-		<script src="js/resCarousel.js"></script>
+    }
 
-		<!-- DESLIZAR NAS SEÇÕES -->
-		<script>
-			$(document).ready(function(){
-     		// Add smooth scrolling to all links in navbar + footer link
-     		$(".navbar a, footer a[href='#minhaPagina']").on('click', function(event) {
+    // Adicionando evento de mudança de idioma
+    const languageSelector = document.getElementById('lang');
+    languageSelector.addEventListener('change', (event) => {
+      changeLanguage(event.target.value);
+    });
 
-      	// Make sure this.hash has a value before overriding default behavior
-          if (this.hash !== "") {
+    document.addEventListener('DOMContentLoaded', () => {
+      changeLanguage('br'); // idioma padrão
+    });
+  </script>
 
-            // Prevent default anchor click behavior
-            event.preventDefault();
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
 
-            // Store hash
-            var hash = this.hash;
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-            // Using jQuery's animate() method to add smooth page scroll
-            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-            $('html, body').animate({
-
-              scrollTop: $(hash).offset().top
-              }, 900, function(){
-              // Add hash (#) to URL when done scrolling (default click behavior)
-              window.location.hash = hash;
-            });
-          } // End if
-     		});
-   		})
-
-   		// Função Jquery com animação para deslizar elementos para dentro da página 
-   		$(window).scroll(function() {
-     		$(".slideanim").each(function(){
-       		var pos = $(this).offset().top;
-       		var winTop = $(window).scrollTop();
-       		if (pos < winTop + 600) {
-         		$(this).addClass("slide");
-       		}
-     		});
-   		});  
-		</script>
-
-		<!-- Required JavaScript Libraries for Animated Word -->
-		<script src="lib/morphext/morphext.min.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
+</body>
 </html>

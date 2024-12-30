@@ -847,6 +847,21 @@ textarea.input-field {
 }
 
 /*-----------------------------------*\
+ * #DIGITAL MARQUEE
+\*-----------------------------------*/
+
+.highlight {
+  color: #e2642b; /* Cor destacada */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Animações suaves */
+  display: inline-block; /* Necessário para transição de transform */
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-20px); /* Movimento para cima ao sair */
+}
+
+/*-----------------------------------*\
  * #MEDIA QUERIES
 \*-----------------------------------*/
 
